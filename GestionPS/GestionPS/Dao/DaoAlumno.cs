@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Dao
 {
-    class DaoUsuario
+    class DaoAlumno
     {
         AccesoDatos ad = new AccesoDatos();
         public Alumno getAlumno(Alumno al)
