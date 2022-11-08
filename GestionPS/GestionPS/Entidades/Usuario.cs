@@ -8,45 +8,40 @@ namespace Entidades
 {
  public class Usuario
     {
-        private int ID;
-        private String User;
-        private String Apellido;
-        private String Nombre;
-        private String Mail;
-        private String Password;
-        private DateTime FechaAlta;
-        private DateTime FechaBaja;
-        private String CausaBaja;
+        private int id;
+        private String user;
+        private String apellido;
+        private String nombre;
+        private String mail;
+        private String password;
+        private DateTime fechaAlta;
+        private DateTime fechaBaja;
+        private String causaBaja;
 
 
 
         public Usuario(int id, String user, String apellido, String nombre, String mail,String password, DateTime fechaalta, DateTime fechabaja,String causabaja)
         {
-            this.ID = id;
-            this.User = user;
-            this.Apellido = apellido;
-            this.Nombre = nombre;
-            this.Mail = mail;
-            this.Password = password;
-            this.FechaAlta = fechaalta;
-            this.FechaBaja = fechabaja;
-            this.CausaBaja = causabaja;
+            this.id = id;
+            this.user = user;
+            this.apellido = apellido;
+            this.nombre = nombre;
+            this.mail = mail;
+            this.password = password;
+            this.fechaAlta = fechaalta;
+            this.fechaBaja = fechabaja;
+            this.causaBaja = causabaja;
 
         }
 
-
-        public int   ID1 { get => ID; set => ID = value; }
-        public string User1 { get => User; set => User = value; }
-        public string Nombre1 { get => Nombre; set => Nombre = value; }
-        public string Apellido1 { get => Apellido; set => Apellido = value; }
-        public string Mail1 { get => Mail; set => Mail = value; }
-        public string Password1 { get => Password; set => Password = value; }
-        public DateTime FechaAlta1 { get => FechaAlta; set => FechaAlta = value; }
-        public DateTime FechaBaja1 { get => FechaBaja; set => FechaBaja = value; }
-        public string CausaBaja1 { get => CausaBaja; set => CausaBaja = value; }
-
-
-
-
+        public int Id { get => id; set => id = value; }
+        public string User { get => user; set => user = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Mail { get => mail; set => mail = value; }
+        public string Password { get => password; set => password = value; }
+        public DateTime FechaAlta { get => fechaAlta; set => fechaAlta = value; }
+        public DateTime FechaBaja { get => fechaBaja; set => fechaBaja = value; }
+        public string CausaBaja { get => causaBaja; set => causaBaja = value; }
     }
 }
