@@ -5,7 +5,7 @@
 -- Dumped from database version 12.12
 -- Dumped by pg_dump version 12.12
 
--- Started on 2022-11-09 22:13:43
+-- Started on 2022-11-10 06:30:04
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -17,6 +17,19 @@ SET check_function_bodies = false;
 SET xmloption = content;
 SET client_min_messages = warning;
 SET row_security = off;
+
+--
+-- TOC entry 212 (class 1255 OID 24667)
+-- Name: Eliminar_alumno(character varying); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public."Eliminar_alumno"(legajo character varying)
+    LANGUAGE sql
+    AS $$DELETE FROM public.alumnos
+	WHERE legajo_alumnos=legajo$$;
+
+
+ALTER PROCEDURE public."Eliminar_alumno"(legajo character varying) OWNER TO postgres;
 
 --
 -- TOC entry 211 (class 1255 OID 24652)
@@ -67,7 +80,46 @@ CREATE PROCEDURE public."Seleccionar_Todos_Alumnos"()
 ALTER PROCEDURE public."Seleccionar_Todos_Alumnos"() OWNER TO postgres;
 
 --
--- TOC entry 215 (class 1255 OID 24660)
+-- TOC entry 213 (class 1255 OID 24668)
+-- Name: eliminar_cuatrimestre(integer); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public.eliminar_cuatrimestre(id integer)
+    LANGUAGE sql
+    AS $$DELETE FROM public.cuatrimestres
+	WHERE id_cuatrimestres=id;$$;
+
+
+ALTER PROCEDURE public.eliminar_cuatrimestre(id integer) OWNER TO postgres;
+
+--
+-- TOC entry 216 (class 1255 OID 24670)
+-- Name: eliminar_inscripto(character varying, integer); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public.eliminar_inscripto(legajo character varying, id integer)
+    LANGUAGE sql
+    AS $$DELETE FROM public.inscriptos
+	WHERE idcuatrimestre_inscriptos=id and legajoalumno_inscriptos=legajo;$$;
+
+
+ALTER PROCEDURE public.eliminar_inscripto(legajo character varying, id integer) OWNER TO postgres;
+
+--
+-- TOC entry 214 (class 1255 OID 24669)
+-- Name: eliminar_usuario(integer); Type: PROCEDURE; Schema: public; Owner: postgres
+--
+
+CREATE PROCEDURE public.eliminar_usuario(id integer)
+    LANGUAGE sql
+    AS $$DELETE FROM public.usuarios
+	WHERE id_usuarios=id;$$;
+
+
+ALTER PROCEDURE public.eliminar_usuario(id integer) OWNER TO postgres;
+
+--
+-- TOC entry 219 (class 1255 OID 24660)
 -- Name: insertar usuarios(character varying, character varying, character varying, character varying, character varying, date); Type: PROCEDURE; Schema: public; Owner: postgres
 --
 
@@ -81,7 +133,7 @@ CREATE PROCEDURE public."insertar usuarios"(usuario character varying, apellido 
 ALTER PROCEDURE public."insertar usuarios"(usuario character varying, apellido character varying, nombre character varying, mail character varying, pass character varying, fecha_alta date) OWNER TO postgres;
 
 --
--- TOC entry 213 (class 1255 OID 24658)
+-- TOC entry 217 (class 1255 OID 24658)
 -- Name: insertar_alumno(integer, character varying, character varying, character varying); Type: PROCEDURE; Schema: public; Owner: postgres
 --
 
@@ -95,7 +147,7 @@ CREATE PROCEDURE public.insertar_alumno(legajo integer, nombre character varying
 ALTER PROCEDURE public.insertar_alumno(legajo integer, nombre character varying, apellido character varying, mail character varying) OWNER TO postgres;
 
 --
--- TOC entry 212 (class 1255 OID 24655)
+-- TOC entry 215 (class 1255 OID 24655)
 -- Name: insertar_cuatrimestre(character varying, date, boolean); Type: PROCEDURE; Schema: public; Owner: postgres
 --
 
@@ -109,7 +161,7 @@ CREATE PROCEDURE public.insertar_cuatrimestre(cuatrimestre character varying, "a
 ALTER PROCEDURE public.insertar_cuatrimestre(cuatrimestre character varying, "año" date, estadocua boolean) OWNER TO postgres;
 
 --
--- TOC entry 214 (class 1255 OID 24659)
+-- TOC entry 218 (class 1255 OID 24659)
 -- Name: insertar_inscriptos(integer, character varying, character varying, character varying, integer, character varying, character varying, character varying, character varying, character varying); Type: PROCEDURE; Schema: public; Owner: postgres
 --
 
@@ -123,7 +175,7 @@ CREATE PROCEDURE public.insertar_inscriptos(idcuatrimestre integer, legajo chara
 ALTER PROCEDURE public.insertar_inscriptos(idcuatrimestre integer, legajo character varying, condicion character varying, encuesta character varying, grupo integer, discord character varying, documentacion character varying, proyecto character varying, observaciones character varying, estado character varying) OWNER TO postgres;
 
 --
--- TOC entry 216 (class 1255 OID 24662)
+-- TOC entry 220 (class 1255 OID 24662)
 -- Name: update_alumnos(character varying, character varying, character varying, character varying); Type: PROCEDURE; Schema: public; Owner: postgres
 --
 
@@ -137,7 +189,7 @@ CREATE PROCEDURE public.update_alumnos(nombre character varying, apellido charac
 ALTER PROCEDURE public.update_alumnos(nombre character varying, apellido character varying, mail character varying, legajo character varying) OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1255 OID 24664)
+-- TOC entry 221 (class 1255 OID 24664)
 -- Name: update_cuatrimestres(character varying, date, boolean, integer); Type: PROCEDURE; Schema: public; Owner: postgres
 --
 
@@ -151,7 +203,7 @@ CREATE PROCEDURE public.update_cuatrimestres(descripcion character varying, "añ
 ALTER PROCEDURE public.update_cuatrimestres(descripcion character varying, "año" date, estado boolean, id integer) OWNER TO postgres;
 
 --
--- TOC entry 230 (class 1255 OID 24665)
+-- TOC entry 234 (class 1255 OID 24665)
 -- Name: update_usuarios(character varying, character varying, character varying, character varying, character varying, date, date, character varying[], integer); Type: PROCEDURE; Schema: public; Owner: postgres
 --
 
@@ -270,31 +322,29 @@ ALTER TABLE public.usuarios ALTER COLUMN id_usuarios ADD GENERATED ALWAYS AS IDE
 
 
 --
--- TOC entry 2858 (class 0 OID 16453)
+-- TOC entry 2862 (class 0 OID 16453)
 -- Dependencies: 202
 -- Data for Name: alumnos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.alumnos (legajo_alumnos, nombre_alumnos, apellido_alumnos, mail_alumnos) FROM stdin;
 22270	alexander	cosmo	ale@gmail.com
-legajo	nombre	apellido	mail
 \.
 
 
 --
--- TOC entry 2860 (class 0 OID 16465)
+-- TOC entry 2864 (class 0 OID 16465)
 -- Dependencies: 204
 -- Data for Name: cuatrimestres; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.cuatrimestres (id_cuatrimestres, descripcion_cuatrimestres, "año_cuatrimestres", cuatrimestre_cuatrimestres) FROM stdin;
 1	cuatrimestre 22	2020-09-10	t
-2	cuatrimestre 2	2021-10-14	t
 \.
 
 
 --
--- TOC entry 2861 (class 0 OID 16474)
+-- TOC entry 2865 (class 0 OID 16474)
 -- Dependencies: 205
 -- Data for Name: inscriptos; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -305,7 +355,7 @@ COPY public.inscriptos (idcuatrimestre_inscriptos, legajoalumno_inscriptos, cond
 
 
 --
--- TOC entry 2863 (class 0 OID 16481)
+-- TOC entry 2867 (class 0 OID 16481)
 -- Dependencies: 207
 -- Data for Name: usuarios; Type: TABLE DATA; Schema: public; Owner: postgres
 --
@@ -316,7 +366,7 @@ COPY public.usuarios (id_usuarios, user_usuarios, apellido_usuarios, nombre_usua
 
 
 --
--- TOC entry 2869 (class 0 OID 0)
+-- TOC entry 2873 (class 0 OID 0)
 -- Dependencies: 203
 -- Name: cuatrimestres_id_cuatrimestres_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -325,7 +375,7 @@ SELECT pg_catalog.setval('public.cuatrimestres_id_cuatrimestres_seq', 2, true);
 
 
 --
--- TOC entry 2870 (class 0 OID 0)
+-- TOC entry 2874 (class 0 OID 0)
 -- Dependencies: 206
 -- Name: usuarios_id_usuarios_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
@@ -334,7 +384,7 @@ SELECT pg_catalog.setval('public.usuarios_id_usuarios_seq', 1, true);
 
 
 --
--- TOC entry 2715 (class 2606 OID 16460)
+-- TOC entry 2719 (class 2606 OID 16460)
 -- Name: alumnos pk_alumnos; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -343,7 +393,7 @@ ALTER TABLE ONLY public.alumnos
 
 
 --
--- TOC entry 2719 (class 2606 OID 16469)
+-- TOC entry 2723 (class 2606 OID 16469)
 -- Name: cuatrimestres pk_cuatrimestres; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -352,7 +402,7 @@ ALTER TABLE ONLY public.cuatrimestres
 
 
 --
--- TOC entry 2723 (class 2606 OID 16478)
+-- TOC entry 2727 (class 2606 OID 16478)
 -- Name: inscriptos pk_inscriptos; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -361,7 +411,7 @@ ALTER TABLE ONLY public.inscriptos
 
 
 --
--- TOC entry 2725 (class 2606 OID 16488)
+-- TOC entry 2729 (class 2606 OID 16488)
 -- Name: usuarios pk_usuarios; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -370,7 +420,7 @@ ALTER TABLE ONLY public.usuarios
 
 
 --
--- TOC entry 2717 (class 2606 OID 16462)
+-- TOC entry 2721 (class 2606 OID 16462)
 -- Name: alumnos unique_mail_alumno; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -379,7 +429,7 @@ ALTER TABLE ONLY public.alumnos
 
 
 --
--- TOC entry 2727 (class 2606 OID 16492)
+-- TOC entry 2731 (class 2606 OID 16492)
 -- Name: usuarios unique_mail_usuarios; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -388,7 +438,7 @@ ALTER TABLE ONLY public.usuarios
 
 
 --
--- TOC entry 2721 (class 2606 OID 16471)
+-- TOC entry 2725 (class 2606 OID 16471)
 -- Name: cuatrimestres unique_name_cuatrimestre; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -397,7 +447,7 @@ ALTER TABLE ONLY public.cuatrimestres
 
 
 --
--- TOC entry 2729 (class 2606 OID 16490)
+-- TOC entry 2733 (class 2606 OID 16490)
 -- Name: usuarios unique_user_usuarios; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -406,7 +456,7 @@ ALTER TABLE ONLY public.usuarios
 
 
 --
--- TOC entry 2730 (class 2606 OID 16493)
+-- TOC entry 2734 (class 2606 OID 16493)
 -- Name: inscriptos fk_alumnos_inscriptos; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -415,7 +465,7 @@ ALTER TABLE ONLY public.inscriptos
 
 
 --
--- TOC entry 2731 (class 2606 OID 16498)
+-- TOC entry 2735 (class 2606 OID 16498)
 -- Name: inscriptos fk_id_cuatrimestres_inscriptos; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -423,7 +473,7 @@ ALTER TABLE ONLY public.inscriptos
     ADD CONSTRAINT fk_id_cuatrimestres_inscriptos FOREIGN KEY (idcuatrimestre_inscriptos) REFERENCES public.cuatrimestres(id_cuatrimestres);
 
 
--- Completed on 2022-11-09 22:13:46
+-- Completed on 2022-11-10 06:30:06
 
 --
 -- PostgreSQL database dump complete
