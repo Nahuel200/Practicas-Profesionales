@@ -111,20 +111,123 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Inicio\Index.aspx" />
+    <Content Include="Forms\AltaAlumno.aspx" />
+    <Content Include="Forms\AltaAlumnoCuatri.aspx" />
+    <Content Include="Forms\AltaCuatri.aspx" />
+    <Content Include="Forms\AltaUsuario.aspx" />
+    <Content Include="Forms\BajaAlumno.aspx" />
+    <Content Include="Forms\BajaCuatri.aspx" />
+    <Content Include="Forms\BajaUsuario.aspx" />
+    <Content Include="Forms\ListarAlumno.aspx" />
+    <Content Include="Forms\ListarCuatri.aspx" />
+    <Content Include="Forms\ListarUsuario.aspx" />
+    <Content Include="Forms\ModificarAlumno.aspx" />
+    <Content Include="Forms\ModificarCuatri.aspx" />
+    <Content Include="Forms\ModificarUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Inicio\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Forms\AltaAlumno.aspx.cs">
+      <DependentUpon>AltaAlumno.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Inicio\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Forms\AltaAlumno.aspx.designer.cs">
+      <DependentUpon>AltaAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AltaAlumnoCuatri.aspx.cs">
+      <DependentUpon>AltaAlumnoCuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AltaAlumnoCuatri.aspx.designer.cs">
+      <DependentUpon>AltaAlumnoCuatri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AltaCuatri.aspx.cs">
+      <DependentUpon>AltaCuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AltaCuatri.aspx.designer.cs">
+      <DependentUpon>AltaCuatri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AltaUsuario.aspx.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\AltaUsuario.aspx.designer.cs">
+      <DependentUpon>AltaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BajaAlumno.aspx.cs">
+      <DependentUpon>BajaAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BajaAlumno.aspx.designer.cs">
+      <DependentUpon>BajaAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BajaCuatri.aspx.cs">
+      <DependentUpon>BajaCuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BajaCuatri.aspx.designer.cs">
+      <DependentUpon>BajaCuatri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BajaUsuario.aspx.cs">
+      <DependentUpon>BajaUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\BajaUsuario.aspx.designer.cs">
+      <DependentUpon>BajaUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListarAlumno.aspx.cs">
+      <DependentUpon>ListarAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ListarAlumno.aspx.designer.cs">
+      <DependentUpon>ListarAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListarCuatri.aspx.cs">
+      <DependentUpon>ListarCuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ListarCuatri.aspx.designer.cs">
+      <DependentUpon>ListarCuatri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ListarUsuario.aspx.cs">
+      <DependentUpon>ListarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ListarUsuario.aspx.designer.cs">
+      <DependentUpon>ListarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModificarAlumno.aspx.cs">
+      <DependentUpon>ModificarAlumno.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ModificarAlumno.aspx.designer.cs">
+      <DependentUpon>ModificarAlumno.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModificarCuatri.aspx.cs">
+      <DependentUpon>ModificarCuatri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ModificarCuatri.aspx.designer.cs">
+      <DependentUpon>ModificarCuatri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ModificarUsuario.aspx.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ModificarUsuario.aspx.designer.cs">
+      <DependentUpon>ModificarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaginaMaestra.Master.cs">
+      <DependentUpon>PaginaMaestra.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PaginaMaestra.Master.designer.cs">
+      <DependentUpon>PaginaMaestra.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Forms\PaginaMaestra.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

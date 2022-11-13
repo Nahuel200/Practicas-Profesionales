@@ -1,0 +1,153 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="Vistas.forms.PaginaMaestra" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .head-usuario {
+            text-align: center;
+        }
+        .logo {
+            width: 30%;
+            text-align: left;
+        }
+        .nav-bar{
+            width: 100%;
+        }
+        .categorias{
+            text-align: center;
+            width: 70%;
+        }
+        .tabla{
+            width: 100%;
+        }
+        .Alumnos{
+            width: 50%;
+        }
+        .Contactanos{
+            width: 50%;
+        }
+        .auto-style1 {
+             width: 30%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <%--BARRA MENU--%>
+        <div class="head-usuario">
+                            <asp:HyperLink ID="HyperLink1" runat="server">¡Bienvenido!</asp:HyperLink>
+
+        <div"><table class="nav-bar">
+                    <tr>
+                        <td class="auto-style1">
+                <asp:HyperLink ID="HyperLink3" runat="server">UTN FRGP Pacheco</asp:HyperLink>
+                        </td>
+                        <td class="categorias">
+                &nbsp;<asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Forms/ABML_Alumnos.aspx">ABML Alumnos</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Forms/ABML_Cuatrimestres.aspx">ABML Cuatrimestres</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Forms/AltaAlumnoCuatrimestre.aspx">Asignar alumno a cuatrimestre</asp:HyperLink>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Forms/ABML_Usuarios.aspx">ABML Usuarios</asp:HyperLink>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <div>
+                <table class="tabla">
+                    <tr>
+                        <td class="Alumnos">
+                            <h4>Creado por:</h4>
+	                        <ul>
+	                            <li>
+                                    <asp:Label ID="Label1" runat="server" Text="Salvatori Gianluca "></asp:Label>
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label2" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label3" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label4" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label5" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label6" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label7" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label8" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label9" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label10" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label11" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+				            </ul>
+                        </td>
+                        <td class="Contactanos">
+                             <h4>Nuestros Emails:</h4>
+	                        <ul>
+	                            <li>
+                                    <asp:Label ID="Label12" runat="server" Text="Salvatorigianluca@yahoo.com "></asp:Label>
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label13" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label14" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label15" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label16" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label17" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+	                            <li>
+                                <asp:Label ID="Label18" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label19" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label20" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label21" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+                                <li>
+                                <asp:Label ID="Label22" runat="server" Text=".."></asp:Label>	                           
+	                            </li>
+				            </ul>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+			
+        </div>
+    </form>
+</body>
+</html>
+
