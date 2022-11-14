@@ -28,6 +28,21 @@ namespace Dao
   
             return user;
         }
+
+        public Usuario getAlunoXMail(Usuario user)
+        {
+            DataTable tabla = ad.ObtenerTabla("usuarios", "SELECT id_usuarios, user_usuarios, apellido_usuarios, nombre_usuarios, mail_usuarios, password_usuarios, fecha_alta_usuarios, fecha_baja_usuarios, causa_baja_usuarios FROM practica_supervisada.usuarios WHERE nombre_usuarios = ' " + user.Mail + "'");
+
+            user.Id = Int32.Parse(tabla.Rows[0][0].ToString());
+            user.User = tabla.Rows[0][1].ToString();
+            user.Password = tabla.Rows[0][2].ToString();
+            user.Mail = tabla.Rows[0][3].ToString();
+            user.Apellido = tabla.Rows[0][4].ToString();
+            user.FechaAlta = DateTime.Parse(tabla.Rows[0][5].ToString());
+            user.FechaBaja = DateTime.Parse(tabla.Rows[0][6].ToString());
+
+            return user;
+        }
         public DataTable getTablaAlumno()
         {
             DataTable tabla = ad.ObtenerTabla("usuarios", "SELECT * FROM practica_supervisada.usuarios");
@@ -47,6 +62,16 @@ namespace Dao
         public bool ExisteAAlumno(Usuario user)
         {
             return ad.Existe("SELECT * FROM practica_supervisada.usuarios WHERE id_usuarios ='" + user.Id + "'");
+        }
+
+        public bool ExisteMail(String mail)
+        {
+            return ad.Existe("SELECT * FROM practica_supervisada.usuarios WHERE mail_usuarios ='" + mail + "'");
+        }
+
+        public bool CoincideContraseña(String mail, String pass)
+        {
+            return ad.Existe("SELECT * FROM practica_supervisada.usuarios  WHERE mail_usuarios ='" + mail + "' AND password_usuarios = '" + pass + "'");
         }
 
         public int EliminarUsuaario(Usuario user)

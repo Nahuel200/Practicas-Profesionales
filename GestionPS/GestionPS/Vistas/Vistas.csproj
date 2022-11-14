@@ -121,6 +121,7 @@
     <Content Include="Forms\ListarAlumno.aspx" />
     <Content Include="Forms\ListarCuatri.aspx" />
     <Content Include="Forms\ListarUsuario.aspx" />
+    <Content Include="Forms\Loguin.aspx" />
     <Content Include="Forms\ModificarAlumno.aspx" />
     <Content Include="Forms\ModificarCuatri.aspx" />
     <Content Include="Forms\ModificarUsuario.aspx" />
@@ -196,6 +197,13 @@
     </Compile>
     <Compile Include="Forms\ListarUsuario.aspx.designer.cs">
       <DependentUpon>ListarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Loguin.aspx.cs">
+      <DependentUpon>Loguin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\Loguin.aspx.designer.cs">
+      <DependentUpon>Loguin.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\ModificarAlumno.aspx.cs">
       <DependentUpon>ModificarAlumno.aspx</DependentUpon>
