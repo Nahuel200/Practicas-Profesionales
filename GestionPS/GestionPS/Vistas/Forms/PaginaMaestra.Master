@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="Vistas.forms.PaginaMaestra" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestra.master.cs" Inherits="Vistas.Forms.PaginaMaestra" %>
 
 <!DOCTYPE html>
 
@@ -41,7 +41,6 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <%--BARRA MENU--%>
         <div class="head-usuario">
                             <asp:HyperLink ID="HyperLink1" runat="server">¡Bienvenido!</asp:HyperLink>
 
@@ -63,6 +62,8 @@
                 </table>
             </div>
         </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
             <div>
                 <table class="tabla">
                     <tr>
@@ -145,7 +146,6 @@
                     </tr>
                 </table>
             </div>
-			
         </div>
     </form>
 </body>
